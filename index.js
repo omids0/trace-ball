@@ -5,7 +5,7 @@ let interval;
 let both = 0
 
 let windowSize = window.innerWidth
-let random = Math.floor(Math.random() * 500)
+let random = Math.floor(Math.random() * windowSize/2)
 
 function setPosition() {
       let left = parseInt(window.getComputedStyle(systemBallEl).getPropertyValue('left'))
@@ -23,9 +23,11 @@ function tracing() {
       let left = parseInt(window.getComputedStyle(myballEL).getPropertyValue('left'))
       let top = parseInt(window.getComputedStyle(myballEL).getPropertyValue('top'))
       let leftMinus = pcBallLeft - left
-      let topMinus = top - pcBallTop
+      let topMinus = pcBallTop - top
 
-      if (leftMinus < 50 && topMinus < 50) {
+      console.log(`${leftMinus} | ${topMinus}`);
+
+      if (leftMinus <= 20 && topMinus <= 20 && leftMinus >= -20 && topMinus >= -20) {
             window.location.reload()
             alert('YOU WON!')
       }
@@ -58,6 +60,7 @@ function moveDown() {
 setPosition()
 
 window.addEventListener('keydown', (e) => {
+      tracing()
       if (both == 0) {
             both++;
             if (e.key === 'ArrowLeft') {
