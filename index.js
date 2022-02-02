@@ -1,11 +1,12 @@
 const myballEL = document.getElementById('myball')
 const systemBallEl = document.getElementById('pcBall')
+const statusEl = document.getElementById('status')
 
 let interval;
 let both = 0
 
 let windowSize = window.innerWidth
-let random = Math.floor(Math.random() * windowSize/2)
+let random = Math.floor(Math.random() * windowSize / 2)
 
 function setPosition() {
       let left = parseInt(window.getComputedStyle(systemBallEl).getPropertyValue('left'))
@@ -24,10 +25,9 @@ function tracing() {
       let top = parseInt(window.getComputedStyle(myballEL).getPropertyValue('top'))
       let leftMinus = pcBallLeft - left
       let topMinus = pcBallTop - top
+      statusEl.textContent = `${leftMinus} | ${topMinus}`
 
-      console.log(`${leftMinus} | ${topMinus}`);
-
-      if (leftMinus <= 20 && topMinus <= 20 && leftMinus >= -20 && topMinus >= -20) {
+      if (leftMinus <= 30 && topMinus <= 30 && leftMinus >= -30 && topMinus >= -30) {
             window.location.reload()
             alert('YOU WON!')
       }
