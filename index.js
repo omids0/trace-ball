@@ -6,7 +6,7 @@ let interval;
 let both = 0
 
 let windowSize = window.innerWidth
-let random = Math.floor(Math.random() * windowSize / 2)
+let random = Math.floor(Math.random() * windowSize/2)
 
 function setPosition() {
       let left = parseInt(window.getComputedStyle(systemBallEl).getPropertyValue('left'))
@@ -29,7 +29,7 @@ function tracing() {
 
       if (leftMinus <= 30 && topMinus <= 30 && leftMinus >= -30 && topMinus >= -30) {
             window.location.reload()
-            alert('YOU WON!')
+            alert('✨ YOU WON! ✨🎉🎈')
       }
 }
 
