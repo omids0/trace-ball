@@ -10,6 +10,37 @@ let windowSize = {
   height: window.innerHeight - 90,
 };
 let random = Math.floor(Math.random() * windowSize);
+let gameLevel;
+
+function handleGameLevel() {
+  let choose = {
+    a: () => (gameLevel = 30),
+    b: () => (gameLevel = 20),
+    c: () => (gameLevel = 10),
+    d: () => (gameLevel = 5),
+    e: () => (gameLevel = 0),
+    default: () => (gameLevel = 100),
+  };
+
+  let askLevel = prompt(
+    `Choose game level?
+    a. Easy
+    b. Soft
+    c. Hard
+    d. Very hard
+    e. Extra hard
+    `,
+    "a"
+  );
+
+  try {
+    choose[askLevel]();
+  } catch (error) {
+    choose.default();
+  }
+}
+
+handleGameLevel();
 
 function setPosition() {
   let left = parseInt(
@@ -42,10 +73,10 @@ function tracing() {
   statusEl.textContent = `${leftMinus} | ${topMinus}`;
 
   if (
-    leftMinus <= 10 &&
-    topMinus <= 10 &&
-    leftMinus >= -10 &&
-    topMinus >= -10
+    leftMinus <= gameLevel &&
+    topMinus <= gameLevel &&
+    leftMinus >= -gameLevel &&
+    topMinus >= -gameLevel
   ) {
     myballEL.style.left = 0;
     myballEL.style.top = 0;
