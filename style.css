@@ -1,53 +1,54 @@
 * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-      background: #333
+  background: #333;
 }
-.game{
-      width: 100%;
-      height: 100vh;
+.game {
+  width: 100%;
+  height: 100vh;
 }
-.status{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #f0f0f0;
-      font-size: 20px;
-      width: 100%;
-      z-index: -1;
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f0f0f0;
+  font-size: 20px;
+  width: 100%;
+  z-index: -1;
+  position: fixed;
 }
-.playerBall{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80px;
-      height: 80px;
-      background: yellowgreen;
-      border-radius: 50%;
-      position: relative;
-      top: 0;
-      left: 0;
-      border: 3px dashed yellow;
-      z-index: 10000;
-      color: yellow;
-      font-weight: 700;
+.playerBall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: yellowgreen;
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 3px dashed yellow;
+  z-index: 10000;
+  color: yellow;
+  font-weight: 700;
 }
-.systemBall{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 80px;
-      height: 80px;
-      background: lightblue;
-      border: 3px dashed blue;
-      border-radius: 50%;
-      position: fixed !important;
-      top: 0px;
-      left: 0px;
-      z-index: 500;
-      color: blue;
-      font-weight: 700;
+.systemBall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: lightblue;
+  border: 3px dashed blue;
+  border-radius: 50%;
+  position: fixed !important;
+  top: 0px;
+  left: 0px;
+  z-index: 500;
+  color: blue;
+  font-weight: 700;
 }
